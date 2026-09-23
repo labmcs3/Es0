@@ -18,7 +18,8 @@ int main(){
   cout << g.X() << " " << g.Y() << " " << g.Z() << endl;
 
   cout << "Il vettore a vale " <<  a << endl;
-
+  
+  cout << "Inserisci un vettore " << a << endl;
   cin >> a;
   cout << a << endl;
 

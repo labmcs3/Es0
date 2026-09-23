@@ -1,35 +1,35 @@
 #include "Vector3.h"
 
-Vector3 Vector3::operator+(Vector3 b){
+Vector3 Vector3::operator+(const Vector3& b) const{
   Vector3 sum;
   for (int i=0;i<3;i++)
     sum.m_v[i] = m_v[i]+b.m_v[i];
   return sum;
 }
 
-Vector3 Vector3::operator*(double f){
+Vector3 Vector3::operator*(double f) const{
   Vector3 v;
   for (int i=0;i<3;i++)
     v.m_v[i] = f*m_v[i];
   return v;
 }
 
-Vector3 Vector3::operator-(){
+Vector3 Vector3::operator-() const{
   Vector3 v;
   for (int i=0;i<3;i++)
     v.m_v[i] = -m_v[i];
   return v;
 }
 
-double Vector3::X(){
+double Vector3::X() const{
   return m_v[0];
 }
 
-double Vector3::Y(){
+double Vector3::Y() const{
   return m_v[1];
 }
 
-double Vector3::Z(){
+double Vector3::Z() const{
   return m_v[2];
 }
 
@@ -45,11 +45,11 @@ void Vector3::Z(double z){
   m_v[2] = z;
 }
 
-Vector3 operator*(double f, Vector3 a){
+Vector3 operator*(double f, const Vector3& a){
   return a*f;
 }
 
-std::ostream& operator<<(std::ostream& output, Vector3 a){
+std::ostream& operator<<(std::ostream& output, const Vector3& a){
   output << "(" << a.X() << "," << a.Y() << "," << a.Z() << ")";
   return output;
 }
